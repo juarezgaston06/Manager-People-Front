@@ -1,0 +1,42 @@
+<div class="container">
+    <mat-card class="card">
+        <form [formGroup]="formGroup">
+            <mat-form-field class="item">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="firstName">
+            </mat-form-field>
+
+            <mat-form-field class="item">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="lastName">
+            </mat-form-field>
+
+            <mat-form-field class="item">
+                <mat-label>D.N.I</mat-label>
+                <input matInput formControlName="dni">
+            </mat-form-field>
+
+            <mat-form-field class="item">
+                <mat-label>Phone</mat-label>
+                <input matInput formControlName="phone">
+            </mat-form-field>
+
+            <mat-form-field class="item">
+                <mat-label>Provinces</mat-label>
+                <mat-select formControlName="province">
+                    <mat-option *ngFor="let province of provinces" [value]="province.id">
+                        {{province.name}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <div class="item">
+
+                <button mat-raised-button color="primary" (click)="modifyPerson()">Modify</button>
+                <button mat-raised-button color="warn" (click)="cancelar()">Cancel</button>
+
+            </div>
+
+        </form>
+    </mat-card>
+</div>
